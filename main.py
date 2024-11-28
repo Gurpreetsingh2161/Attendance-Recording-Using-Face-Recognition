@@ -11,13 +11,6 @@ import time
 
 ############################################# FUNCTIONS ################################################
 
-def assure_path_exists(path):
-    dir = os.path.dirname(path)
-    if not os.path.exists(dir):
-        os.makedirs(dir)
-
-##################################################################################
-
 def tick():
     time_string = time.strftime('%H:%M:%S')
     clock.config(text=time_string)
@@ -31,7 +24,6 @@ def contact():
 ###################################################################################
 
 def save_pass():
-    assure_path_exists("TrainingImageLabel/")
     exists1 = os.path.isfile("TrainingImageLabel\psd.txt")
     if exists1:
         tf = open("TrainingImageLabel\psd.txt", "r")
@@ -95,7 +87,6 @@ def change_pass():
 #####################################################################################
 
 def psw():
-    assure_path_exists("TrainingImageLabel/")
     exists1 = os.path.isfile("TrainingImageLabel\psd.txt")
     if exists1:
         tf = open("TrainingImageLabel\psd.txt", "r")
